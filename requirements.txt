@@ -1,5 +1,0 @@
-decouple
-django
-djangorestframework
-validate_email
-pytz==2019.2
