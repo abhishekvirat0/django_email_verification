@@ -1,3 +1,4 @@
+decouple
 django
 djangorestframework
 validate_email
