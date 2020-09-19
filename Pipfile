@@ -11,7 +11,7 @@ validate-email = "*"
 coverage = "*"
 codecov = "*"
 djangorestframework = "*"
-environ = "*"
+django-environ = "*"
 
 [requires]
 python_version = "3.5"
