@@ -1,2 +1,4 @@
-Django==2.1
+django
+djangorestframework
+validate_email
 pytz==2019.2

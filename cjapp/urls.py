@@ -15,10 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.auth.decorators import login_required
+from restapi import views
 from restapi.views import *
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', index),
+    url(r'register/', views.RegistrationView.as_view(), name='register'),
+    url(r'login/', views.LoginView.as_view(), name='login'),
+    url(r'logout/', views.LogoutView.as_view(), name='logout'),
+    # url(r'activate/<uidb64>/<token>', views.ActivateAccountView.as_view(), name='activate'), won't work since token size exceeds
+    url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        views.ActivateAccountView.as_view(), name='activate'),
+    url(r'', login_required(views.HomeView.as_view()), name='home'),
 ]

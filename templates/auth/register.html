@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+
+        <div class="col-md-4 ">
+            <div class="row">
+
+                <div class="col-md-2">
+                </div>
+
+                <div class="col-md-8">
+
+                    <div class="card mt-5">
+                      <img class="card-img-top pd-2" src="https://cdn.worldvectorlogo.com/logos/instagram-1.svg" height="80px" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title text-muted">Sign up to see photos and video from your friends.</h5>
+                        <a href="#" class="btn btn-sm btn-block btn-primary"><i class="fa fa-facebook"></i>  Login with Facebook</a>
+
+                          <div class="row">
+                              <div class="col-md-5">
+                                  <hr>
+                              </div>
+                              <div class="col-md-2">
+                                  <p class="text-muted">OR</p>
+                              </div>
+                              <div class="col-md-5">
+                                  <hr>
+                              </div>
+                          </div>
+
+                            {% include 'partials/_flash_message.html' %}
+
+                          <form action="{% url 'register' %}" method="post">
+
+                              {% csrf_token %}
+
+                              <div class="form-group">
+                                  <input class="form-control form-control-sm" type="email" name="email" value="{{data.email}}" placeholder="Email">
+                              </div>
+                              <div class="form-group">
+                                  <input class="form-control form-control-sm" type="text" name="name" value="{{data.name}}" placeholder="Full Name">
+                              </div>
+                              <div class="form-group">
+                                  <input class="form-control form-control-sm" type="text" name="username" value="{{data.username}}" placeholder="Username">
+                              </div>
+                              <div class="form-group">
+                                  <input class="form-control form-control-sm" type="password" name="password" value="" placeholder="Password">
+                              </div>
+                              <div class="form-group">
+                                  <input class="form-control form-control-sm" type="password" name="password2" value="" placeholder="Confirm Password">
+                              </div>
+
+                              <input type="submit" value="Sign up" class="btn btn-sm btn-block btn-primary"/>
+
+
+                            <!-- password-->
+<!--                            <div class="container1">-->
+<!--                              <div class="hidden">-->
+<!--                                <svg class="lock" width="30" height="40" viewBox="0 0 30 40">-->
+<!--                                  <path class="lock-white" d="M 12.519565,0 C 6.7072359,0 2.0282227,4.622895 2.0282227,10.365511 V 19.386852 C 0.81380849,20.12592 0,21.438885 0,22.957364 V 40 H 30 V 22.957364 C 30,21.444973 29.193452,20.135235 27.987171,19.394457 V 10.365511 C 27.987171,4.622895 23.308158,0 17.495831,0 Z M 12.519565,4.384239 H 17.495831 C 20.923632,4.384239 23.682489,7.111909 23.682489,10.498597 V 19.002803 H 6.3309823 V 10.498597 C 6.3309823,7.111909 9.091764,4.384239 12.519565,4.384239 Z" />-->
+<!--                                </svg>-->
+<!--                                <input type="password" class="hidden-input" />-->
+<!--                              </div>-->
+<!--                              <div class="revealed">-->
+<!--                                <svg class="lock" width="30" height="40" viewBox="0 0 30 40">-->
+<!--                                  <path class="lock-black" d="M 12.519565,0 C 6.7072359,0 2.0282227,4.622895 2.0282227,10.365511 V 19.386852 C 0.81380849,20.12592 0,21.438885 0,22.957364 V 40 H 30 V 22.957364 C 30,21.444973 29.193452,20.135235 27.987171,19.394457 V 10.365511 C 27.987171,4.622895 23.308158,0 17.495831,0 Z M 12.519565,4.384239 H 17.495831 C 20.923632,4.384239 23.682489,7.111909 23.682489,10.498597 V 19.002803 H 6.3309823 V 10.498597 C 6.3309823,7.111909 9.091764,4.384239 12.519565,4.384239 Z" />-->
+<!--                                </svg>-->
+<!--                                <input class="revealed-input" />-->
+<!--                              </div>-->
+<!--                              <div class="button1">-->
+<!--                                <svg class="eye" width="36" height="36" viewBox="0 0 72 72">-->
+<!--                                  <path class="eye-lower" d="M 15.6,37 C 15.6,37 24.309181,49.073101 34.102911,49.166773 43.896641,49.260445 53.4,37 53.4,37" />-->
+<!--                                  <circle r="6" cy="36" cx="34.400002" class="eye-iris" />-->
+<!--                                  <path class="eye-lid" d="M -5,-5 V 37 H 15.6 C 15.6,37 25.327177,48.715274 34.312131,48.785 43.297085,48.854726 53.4,37 53.4,37 H 77 V -5 Z" />-->
+<!--                                  <g class="eye-lashes">-->
+<!--                                    <path class="eye-lash" d="M 17.45627,17.07484 24.778981,25.652873" />-->
+<!--                                    <path class="eye-lash" d="M 34.602,12.600574 V 23.601076" />-->
+<!--                                    <path class="eye-lash" d="M 51.580203,17.07484 44.257492,25.652873" />-->
+<!--                                  </g>-->
+<!--                                </svg>-->
+<!--                              </div>-->
+<!--                            </div>-->
+                            <!--    password ends-->
+
+
+                          </form>
+                             <small class="py-3">
+                                    By signing up, you agree to our Terms , Data Policy and Cookies Policy .
+                             </small>
+
+                      </div>
+                    </div>
+
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <p>
+                                Already have an account? <a href="{% url 'login' %}">Login</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <p>
+                               Forgot Password? <a href="#">Reset it here</a>
+                            </p>
+                        </div>
+                    </div>
+
+
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+
+{% endblock %}
