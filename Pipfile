@@ -10,7 +10,7 @@ django = "*"
 validate-email = "*"
 coverage = "*"
 codecov = "*"
-rest_framework = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.5"
