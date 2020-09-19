@@ -10,6 +10,7 @@ django = "*"
 validate-email = "*"
 coverage = "*"
 codecov = "*"
+python-decouple = "*"
 
 [requires]
 python_version = "3.5"
