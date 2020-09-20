@@ -81,7 +81,7 @@ pytestdebug.log
 # Flask stuff:
 instance/
 .webassets-cache
-
+myEnvVal.py
 # Scrapy stuff:
 .scrapy
 

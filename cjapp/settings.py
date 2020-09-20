@@ -12,9 +12,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from django.contrib import messages
-import environ
-env = environ.Env()
-env.read_env(env.str('ENV_PATH', '/django_email_verification/.env'))
+import myEnvVal
+myEnvVal.setVar()
 
 # from decouple import config
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -132,17 +131,17 @@ STATICFILES_DIRS = [
 
 # for email verification
 
-# EMAIL_HOST=os.environ.get('EMAIL_HOST')
-# EMAIL_HOST_USER=os.environ.get('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
-# EMAIL_USE_TLS=os.environ.get('EMAIL_USE_TLS')
-# EMAIL_PORT=os.environ.get('EMAIL_PORT')
+EMAIL_HOST=os.environ.get('EMAIL_HOST')
+EMAIL_HOST_USER=os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS=os.environ.get('EMAIL_USE_TLS')
+EMAIL_PORT=os.environ.get('EMAIL_PORT')
 
-EMAIL_HOST=env('EMAIL_HOST')
-EMAIL_HOST_USER=env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD=env('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS=env('EMAIL_USE_TLS')
-EMAIL_PORT=env('EMAIL_PORT')
+# EMAIL_HOST=env('EMAIL_HOST')
+# EMAIL_HOST_USER=env('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD=env('EMAIL_HOST_PASSWORD')
+# EMAIL_USE_TLS=env('EMAIL_USE_TLS')
+# EMAIL_PORT=env('EMAIL_PORT')
 
 MESSAGE_TAGS={
     messages.ERROR:'danger'
